@@ -12,3 +12,17 @@ for (let i = 0; i < dimension; i++) {
     }
 }
 
+const squareDivHoverListener = document.querySelectorAll(".squareDiv");
+
+squareDivHoverListener.forEach(squareDiv => {
+    squareDiv.addEventListener("mouseenter", () => {
+        squareDiv.style.backgroundColor = "red";
+    });
+    squareDiv.addEventListener("mouseleave", () => {
+        squareDiv.style.backgroundColor = "white";
+    });
+});
+
+squareDivHoverListener.forEach(squareDiv => {
+    
+});
