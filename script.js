@@ -1,4 +1,9 @@
 const container = document.querySelector(".container");
+const header = document.querySelector(".header");
+const input = document.querySelector("input");
+const enterBtn = document.querySelector("#enterBtn");
+const error = document.createElement("p");
+
 
 let dimension = 16;
 let squareDivSize = 960 / dimension;
@@ -21,4 +26,12 @@ squareDivHoverListener.forEach(squareDiv => {
     squareDiv.addEventListener("mouseleave", () => {
         squareDiv.style.backgroundColor = "white";
     });
+});
+
+enterBtn.addEventListener("click", () => {
+    error.textContent = "";
+    if (input.value > 100 || input.value < 1 || input.value % Math.round(input.value) != 0) {
+        error.textContent = "Must be an integer from 1 to 100. Please try again.";
+        header.appendChild(error);
+    }
 });
