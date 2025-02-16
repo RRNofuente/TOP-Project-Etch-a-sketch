@@ -22,7 +22,3 @@ squareDivHoverListener.forEach(squareDiv => {
         squareDiv.style.backgroundColor = "white";
     });
 });
-
-squareDivHoverListener.forEach(squareDiv => {
-    
-});
