@@ -30,7 +30,7 @@ function gridHover(dimension) {
     let count = 10;
     const countArray = {};
     const totalSquare = dimension * dimension;
-    for (let i = 0; i < totalSquare; i++) {
+    for (let i = 0; i <= totalSquare; i++) {
         countArray[i] = count;
     }
     squareDivHoverListener.forEach(squareDiv => {
