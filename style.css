@@ -19,8 +19,30 @@ select {
 }
 
 body {
-    display: grid;
-    place-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 960px;
+    margin: 2.5rem;
+}
+
+label {
+    font-size: 5rem;
+}
+
+.header div {
+    width: 960px;
+    height: 80px;
+    font-size: 3.5rem;
+    display: flex;
+    gap: 2rem;
+}
+
+button {
+    flex: 1;
 }
 
 .container {
@@ -28,7 +50,6 @@ body {
     flex-wrap: wrap;
     width: 960px;
     height: 960px;
-    margin: 5rem;
     outline: 10px solid black;
 }
 
