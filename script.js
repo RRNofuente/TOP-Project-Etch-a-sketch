@@ -27,7 +27,7 @@ gridHover(dimension);
 
 function gridHover(dimension) {
     const squareDivHoverListener = document.querySelectorAll(".squareDiv");
-    let lightness = 100;
+    let lightness = 50;
     const lightnessArray = {};
     const totalSquare = dimension * dimension;
     for (let i = 0; i <= totalSquare; i++) {
@@ -36,10 +36,11 @@ function gridHover(dimension) {
     squareDivHoverListener.forEach(squareDiv => {
         squareDiv.addEventListener("mouseenter", (event) => {
             let target = event.target;
-            target.style.backgroundColor = `hsl(0,50%,${lightnessArray[target.id]}%)`;
+            let hue = Math.ceil(Math.random() * 360);
+            target.style.backgroundColor = `hsl(${hue},100%,${lightnessArray[target.id]}%)`;
 
             let currentLightness = lightnessArray[target.id];
-            currentLightness -= 10;
+            currentLightness -= 5;
             lightnessArray[target.id] = currentLightness;
         });
         squareDiv.addEventListener("mouseleave", () => {
