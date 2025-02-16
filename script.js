@@ -43,9 +43,6 @@ function gridHover(dimension) {
             currentLightness -= 5;
             lightnessArray[target.id] = currentLightness;
         });
-        squareDiv.addEventListener("mouseleave", () => {
-            squareDiv.style.backgroundColor = "white";
-        });
     });
 }
 
