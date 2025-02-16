@@ -22,17 +22,21 @@ function createGrid(dimension, squareDivSize) {
     }    
 }
 
+gridHover();
 
-const squareDivHoverListener = document.querySelectorAll(".squareDiv");
+function gridHover() {
+    const squareDivHoverListener = document.querySelectorAll(".squareDiv");
 
-squareDivHoverListener.forEach(squareDiv => {
-    squareDiv.addEventListener("mouseenter", () => {
-        squareDiv.style.backgroundColor = "red";
+    squareDivHoverListener.forEach(squareDiv => {
+        squareDiv.addEventListener("mouseenter", () => {
+            squareDiv.style.backgroundColor = "red";
+        });
+        squareDiv.addEventListener("mouseleave", () => {
+            squareDiv.style.backgroundColor = "white";
+        });
     });
-    squareDiv.addEventListener("mouseleave", () => {
-        squareDiv.style.backgroundColor = "white";
-    });
-});
+}
+
 
 enterBtn.addEventListener("click", () => {
     error.textContent = "";
@@ -53,15 +57,6 @@ enterBtn.addEventListener("click", () => {
         input.focus();
         createGrid(dimension, squareDivSize);
 
-        const squareDivHoverListener = document.querySelectorAll(".squareDiv");
-
-        squareDivHoverListener.forEach(squareDiv => {
-            squareDiv.addEventListener("mouseenter", () => {
-                squareDiv.style.backgroundColor = "red";
-            });
-            squareDiv.addEventListener("mouseleave", () => {
-                squareDiv.style.backgroundColor = "white";
-            });
-        });
+        gridHover();
     }
 });
