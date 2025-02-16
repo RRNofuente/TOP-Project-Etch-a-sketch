@@ -17,3 +17,15 @@ textarea,
 select {
     font: inherit;
 }
+
+body {
+    display: grid;
+    place-content: center;
+}
+
+.container {
+    width: 960px;
+    height: 960px;
+    margin: 5rem;
+    border: 10px solid black;
+}
