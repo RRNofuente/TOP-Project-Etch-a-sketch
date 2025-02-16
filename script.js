@@ -15,7 +15,7 @@ function createGrid(dimension, squareDivSize) {
         for (let j = 0; j < dimension; j++) {
             const squareDiv = document.createElement("div");
             squareDiv.classList.add("squareDiv");
-            squareDiv.id = `${(i*16)+(j+1)}`
+            squareDiv.id = `${(i*dimension)+(j+1)}`
             squareDiv.style.flexBasis = `${squareDivSize}px`
             squareDiv.style.height = "auto";
             container.appendChild(squareDiv);
