@@ -15,6 +15,7 @@ function createGrid(dimension, squareDivSize) {
         for (let j = 0; j < dimension; j++) {
             const squareDiv = document.createElement("div");
             squareDiv.classList.add("squareDiv");
+            squareDiv.id = `${(i*16)+(j+1)}`
             squareDiv.style.flexBasis = `${squareDivSize}px`
             squareDiv.style.height = "auto";
             container.appendChild(squareDiv);
@@ -22,13 +23,25 @@ function createGrid(dimension, squareDivSize) {
     }    
 }
 
-gridHover();
+gridHover(dimension);
 
-function gridHover() {
+function gridHover(dimension) {
     const squareDivHoverListener = document.querySelectorAll(".squareDiv");
-
+    let count = 10;
+    const countArray = {};
+    const totalSquare = dimension * dimension;
+    for (let i = 0; i < totalSquare; i++) {
+        countArray[i] = count;
+    }
     squareDivHoverListener.forEach(squareDiv => {
-        squareDiv.addEventListener("mouseenter", () => {
+        squareDiv.addEventListener("mouseenter", (event) => {
+            let target = event.target;
+            target.textContent = countArray[target.id];
+
+            let currentCount = countArray[target.id];
+            currentCount -= 1;
+            countArray[target.id] = currentCount;
+
             squareDiv.style.backgroundColor = "red";
         });
         squareDiv.addEventListener("mouseleave", () => {
@@ -57,6 +70,6 @@ enterBtn.addEventListener("click", () => {
         input.focus();
         createGrid(dimension, squareDivSize);
 
-        gridHover();
+        gridHover(dimension);
     }
 });
