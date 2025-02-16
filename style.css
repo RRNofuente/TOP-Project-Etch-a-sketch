@@ -45,6 +45,11 @@ button {
     flex: 1;
 }
 
+p {
+    font-size: 2rem;
+    color: red;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
